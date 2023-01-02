@@ -55,13 +55,13 @@ function Login() {
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
+      <div className="w-full p-6 m-auto bg-indigo-900 rounded-md shadow-lg lg:max-w-xl">
+        <h1 className="text-3xl font-semibold text-center text-white ">
           Sign in
         </h1>
         <form className="mt-6" onSubmit={onSubmit}>
           <div className="mb-2">
-            <label className="block text-sm font-semibold text-gray-800">
+            <label className="block text-sm font-semibold text-white">
               Name
             </label>
             <input
@@ -71,11 +71,12 @@ function Login() {
               name="name"
               value={name}
               onChange={onChange}
+              autoComplete="off"
               required
             />
           </div>
           <div className="mb-2">
-            <label className="block text-sm font-semibold text-gray-800">
+            <label className="block text-sm font-semibold text-white">
               Password
             </label>
             <input
@@ -86,12 +87,13 @@ function Login() {
               placeholder="******************"
               value={password}
               onChange={onChange}
+              autoComplete="off"
               required
             />
           </div>
           <a
             href="localhost:3000/register"
-            className="text-xs text-purple-600 hover:underline"
+            className="text-xs text-white hover:underline"
           >
             Forget Password?
           </a>
@@ -105,10 +107,10 @@ function Login() {
           </div>
         </form>
 
-        <p className="mt-8 text-xs font-light text-center text-gray-700">
+        <p className="mt-8 text-xs font-light text-center text-white">
           {" "}
           Don't have an account?{" "}
-          <Link to="/register" className="text-indigo-900 underline">
+          <Link to="/register" className="text-purple-700 underline">
             Register
           </Link>
         </p>

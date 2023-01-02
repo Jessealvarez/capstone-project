@@ -5,7 +5,13 @@ import { logout, reset } from "../features/auth/authSlice";
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  //get user from the state -> auth
   const { user } = useSelector((state) => state.auth);
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
+  };
   return (
     <div className="navbar bg-indigo-900 flex space-x-20 ">
       <Link to="/" className="btn btn-ghost font-bold text-xl">
@@ -14,13 +20,23 @@ function Navbar() {
       <Link to="/about" className="btn btn-ghost font-bold text-xl">
         About
       </Link>
-      <Link to="/register" className="btn btn-ghost font-bold text-xl">
-        Register
-      </Link>
 
-      <Link to="/login" className="btn btn-ghost font-bold text-xl">
-        Log In
-      </Link>
+      {user ? (
+        <>
+          <Link className="btn btn-ghost" onClick={onLogout}>
+            Logout
+          </Link>
+        </>
+      ) : (
+        <>
+          <Link to="/login" className="btn btn-ghost font-bold text-xl">
+            Log In
+          </Link>
+          <Link to="/register" className="btn btn-ghost font-bold text-xl">
+            Register
+          </Link>
+        </>
+      )}
     </div>
   );
 }

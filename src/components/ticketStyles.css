@@ -1,0 +1,11 @@
+.status {
+  text-decoration: underline;
+}
+
+.status-new {
+  color: forestgreen;
+}
+
+.status-closed {
+  color: palevioletred;
+}
