@@ -26,6 +26,7 @@ function Navbar() {
           <Link className="btn btn-ghost" onClick={onLogout}>
             Logout
           </Link>
+          <h2 className="font-bold text-xl">{user.name}</h2>
         </>
       ) : (
         <>
