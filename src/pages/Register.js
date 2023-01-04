@@ -99,7 +99,7 @@ function Register() {
             name="password"
             value={password}
             onChange={onChange}
-            autocomplete="off"
+            autoComplete="off"
             required
           />
         </div>

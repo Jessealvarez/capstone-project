@@ -2,7 +2,7 @@ import me from "../images/me.png";
 
 function About() {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src={me}
@@ -11,10 +11,14 @@ function About() {
         />
         <div>
           <h1 className="text-5xl font-bold">Hello! I mean-Lorem Ipsum..</h1>
-          <p className="py-6">
-            I'm Jesse, a fledgling Full-Stack Developer and illustrator. I made
-            this cool MERN (Mongo, Express, React, & Node.js) stack project with
-            the help of Brad Traversy's awesome React and Redux course!
+          <p className="mt-2">
+            My portfolio can be found{" "}
+            <a
+              className="font-medium text-sky-500"
+              href="http://webdevjesse.com"
+            >
+              here.
+            </a>
           </p>
         </div>
       </div>

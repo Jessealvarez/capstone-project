@@ -13,8 +13,8 @@ function Navbar() {
     navigate("/");
   };
   return (
-    <div className="navbar bg-indigo-900 flex space-x-20 ">
-      <Link to="/" className="btn btn-ghost font-bold text-xl">
+    <div className="navbar bg-indigo-900 py-8 mb-12 flex justify-between ">
+      <Link to="/" className="btn btn-ghost font-bold text-xl ">
         Helpdesk Hero
       </Link>
       <Link to="/about" className="btn btn-ghost font-bold text-xl">
