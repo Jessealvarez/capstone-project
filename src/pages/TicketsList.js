@@ -30,7 +30,7 @@ function TicketsList() {
     <div className="relative flex flex-col justify-center">
       <Link
         to="/new-ticket"
-        className="btn btn-reverse max-w-sm place-self-center mt-6"
+        className="btn btn-reverse max-w-sm place-self-center "
       >
         New Ticket
       </Link>

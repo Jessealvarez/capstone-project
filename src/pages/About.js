@@ -1,17 +1,19 @@
 import me from "../images/me.png";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
   return (
     <div className="hero min-h-screen ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src={me}
-          className="max-w-sm rounded-lg shadow-2xl rounded-full"
+          className="md:max-w-sm shadow-2xl rounded-full"
           alt="me!"
         />
         <div>
           <h1 className="text-5xl font-bold">Hello! I mean-Lorem Ipsum..</h1>
-          <p className="mt-2">
+          <p className=" leading-8 text-xl">
             My portfolio can be found{" "}
             <a
               className="font-medium text-sky-500"
@@ -20,6 +22,12 @@ function About() {
               here.
             </a>
           </p>
+          <button
+            onClick={() => navigate("/")}
+            className="btn btn-ghost mt-8 border-solid border-2 border-purple-900"
+          >
+            Back{" "}
+          </button>
         </div>
       </div>
     </div>

@@ -1,41 +1,62 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
+import { FaRegMinusSquare } from "react-icons/fa";
+import { useState } from "react";
 
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   //get user from the state -> auth
   const { user } = useSelector((state) => state.auth);
+
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
     navigate("/");
   };
   return (
-    <div className="navbar bg-indigo-900 py-8 mb-12 flex justify-between ">
-      <Link to="/" className="btn btn-ghost font-bold text-xl ">
+    <div className="navbar bg-gradient-to-r from-indigo-900 to-purple-900 py-2 mb-12 md:flex justify-between">
+      <button
+        onClick={() => navigate("/")}
+        className="block btn btn-ghost font-bold text-xl "
+      >
         Helpdesk Hero
-      </Link>
-      <Link to="/about" className="btn btn-ghost font-bold text-xl">
+      </button>
+
+      <button
+        onClick={() => navigate("/about")}
+        className="hidden md:block btn btn-ghost font-bold text-xl "
+      >
         About
-      </Link>
+      </button>
 
       {user ? (
         <>
-          <Link className="btn btn-ghost" onClick={onLogout}>
+          <button
+            className=" md:block text-center btn font-bold text-xl btn-ghost flex items-center justify-center"
+            onClick={onLogout}
+          >
             Logout
-          </Link>
-          <h2 className="font-bold text-xl">{user.name}</h2>
+          </button>
+          <h2 className="hidden md:block font-bold text-xl mr-2">
+            Hello, {user.name}!
+          </h2>
         </>
       ) : (
         <>
-          <Link to="/login" className="btn btn-ghost font-bold text-xl">
+          <button
+            onClick={() => navigate("/login")}
+            className="hidden md:block btn btn-ghost font-bold text-xl"
+          >
             Log In
-          </Link>
-          <Link to="/register" className="btn btn-ghost font-bold text-xl">
+          </button>
+          <button
+            onClick={() => navigate("/register")}
+            className="md:block btn btn-ghost font-bold text-xl"
+          >
             Register
-          </Link>
+          </button>
         </>
       )}
     </div>
