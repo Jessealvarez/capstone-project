@@ -1,8 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
-import { FaRegMinusSquare } from "react-icons/fa";
-import { useState } from "react";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -16,7 +14,7 @@ function Navbar() {
     navigate("/");
   };
   return (
-    <div className="navbar bg-gradient-to-r from-indigo-900 to-purple-900 py-2 mb-12 md:flex justify-between">
+    <div className="navbar bg-gradient-to-r from-indigo-900 to-purple-900 py-2  md:flex justify-between">
       <button
         onClick={() => navigate("/")}
         className="block btn btn-ghost font-bold text-xl "
