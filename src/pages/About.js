@@ -1,4 +1,4 @@
-import me from "../images/me.png";
+import clayme from "../images/clayme.png";
 import { useNavigate } from "react-router-dom";
 
 function About() {
@@ -7,8 +7,8 @@ function About() {
     <div className="hero min-h-screen ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
-          src={me}
-          className="md:max-w-sm shadow-2xl rounded-full"
+          src={clayme}
+          className="md:max-w-sm shadow-2xl rounded-full bg-gradient-to-tl from-slate-600 to-indigo-900"
           alt="me!"
         />
         <div>
